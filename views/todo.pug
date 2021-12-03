@@ -1,0 +1,33 @@
+extends layout 
+
+block content
+  h1 TODO list
+  h1 #{message}
+  h1 #{alert}
+  table
+    form(action='/todo/add', method="post")
+      tr
+        td 
+          
+            input#email.validate(type="text",name="item")
+            label(for="item") 
+            br
+        td 
+          button.btn(type="submit") ADD
+
+  table.table-bordered
+    form(action='', method="post")
+      tr 
+        td TODO ITEM 
+        td 
+      each to,i in itemList
+        tr
+          td= to.item 
+          td 
+            button.btn(type="submit") DELETE  
+          br
+
+
+
+
+

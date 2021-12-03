@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(1, 82, 107);
+  color: aliceblue;
+  margin: 20%;
+}
+
+h1 {
+  border: 2px solid burlywood;
+}
+h1:hover{
+  background-color: aliceblue;
+  color: rgb(4, 68, 93);
+}
+
+h2 {
+  border: 2px solid burlywood;
+}
+h2:hover{
+  background-color: aliceblue;
+  color: rgb(4, 68, 93);
+}
