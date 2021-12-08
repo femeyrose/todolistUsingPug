@@ -25,6 +25,21 @@ router.post('/add', async (req, res) => {
     }
 
 })
+
+router.post('/delete', async (req, res) => {
+  console.log(req.body)
+  try {
+      await todoModel.deleteItem(req.body)
+      const result= await todoModel.getItems()
+      console.log(result)
+      res.render('todo',{message:'Item deleted Successfully',itemList : result})
+      } catch (error) {
+        console.log(error)
+        res.render('todo',{alert:'Failed to delete item ....'}) 
+    }
+
+})
+
 router.get('/view',async (req, res) => {
   console.log(req.body)
   try {

@@ -31,6 +31,25 @@ todoModel.addItem = (todoData) => {
 	});
 };
 
+todoModel.deleteItem=(todoData) => {
+	return new Promise(async (resolve, reject) => {
+		// connection code to db
+		const connection = mysql.createConnection(connectionStr);
+        console.log(connectionStr);
+    
+		const queryStr = `DELETE FROM projectdb.todo WHERE (id = ${todoData.id});;`
+		
+		connection.query(queryStr, function (err, results, fields) {
+		if (err) {
+				console.log(err)
+				reject(err);
+			} else {
+				resolve(results);
+			}
+		});
+	});
+};
+
 
 todoModel.getItems = () => {
 	return new Promise((resolve, reject) => {

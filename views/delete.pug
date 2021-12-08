@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+  h1 TODO list
+
+ 
+
+  table.table-bordered
+    form(action='/todo/delete', method="delete")
+      tr 
+        td TODO ITEM 
+        td 
+      each to,i in itemList
+        tr
+          td= to.item 
+          td 
+            button.btn(type="submit") DELETE  
+          br
+
+
+
+
+
